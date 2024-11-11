@@ -6,30 +6,26 @@ import Nav from 'react-bootstrap/Nav';
 function Header() {
   return (
     <div>
-      <Navbar bg="dark" variant="dark" expand="lg" className="bg-body-black">
-        <Container>
-          <Navbar.Brand href="#home">
-            <img
-              alt=""
-              src="https://img.freepik.com/premium-vector/black-white-logo-cinema_10375-516.jpg"
-              width="90"
-              height="90"
-              className="d-inline-block align-top"
-            />{' '}
-         TRAILER HUB 
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ms-auto">
-              <Nav.Link href="/" className="ms-3">Home</Nav.Link>
-              <Nav.Link href="/Home" className="ms-3">Upload</Nav.Link>
-              <Nav.Link href="" className="ms-3">Upcoming Movies</Nav.Link>
-              <Nav.Link href="#anime-trailers" className="ms-3">Anime Trailers</Nav.Link>
-              <Nav.Link href="#popular-trailer" className="ms-3">Popular Trailer</Nav.Link>
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
+       <nav style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '20px 50px', background: 'rgba(0, 0, 0, 0.7)' }}>
+    <div className="logo" style={{ display: 'flex', alignItems: 'center' }}>
+      <i className="fab fa-youtube" style={{ fontSize: '24px', color: 'red', marginRight: '10px' }}></i>
+      <span style={{ fontSize: '24px', fontWeight: 'bold' }}>Trailer Play Show</span>
+    </div>
+    <div className="menu" style={{ display: 'flex', alignItems: 'center' }}>
+      <a href="/" className="active" style={{ color: 'red', textDecoration: 'none', margin: '0 15px', fontSize: '16px' }}>HOME</a>
+      <a href="#" style={{ color: 'white', textDecoration: 'none', margin: '0 15px', fontSize: '16px' }}>ABOUT</a>
+      <a href="#" style={{ color: 'white', textDecoration: 'none', margin: '0 15px', fontSize: '16px' }}>BLOG</a>
+      <a href="#" style={{ color: 'white', textDecoration: 'none', margin: '0 15px', fontSize: '16px' }}>PAGES</a>
+      <a href="#" style={{ color: 'white', textDecoration: 'none', margin: '0 15px', fontSize: '16px' }}>TEAM</a>
+      <a href="#" style={{ color: 'white', textDecoration: 'none', margin: '0 15px', fontSize: '16px' }}>CONTACT</a>
+    </div>
+    <div className="icons" style={{ display: 'flex', alignItems: 'center' }}>
+      <i className="fas fa-search" style={{ fontSize: '18px', margin: '0 10px', cursor: 'pointer' }}></i>
+      <i className="fas fa-bell" style={{ fontSize: '18px', margin: '0 10px', cursor: 'pointer' }}></i>
+      <i className="fas fa-user account" style={{ fontSize: '18px', color: 'red', fontWeight: 'bold', margin: '0 10px', cursor: 'pointer' }}></i>
+      <span style={{ color: 'red', fontWeight: 'bold' }}>ACCOUNT</span>
+    </div>
+  </nav>
     </div>
   );
 }

@@ -1,355 +1,252 @@
-import React, { useState } from 'react';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
-import Carousel from 'react-bootstrap/Carousel';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
-function LandingPage() {
-  const [index, setIndex] = useState(0);
 
-  const handleSelect = (selectedIndex) => {
-    setIndex(selectedIndex);
-  };
+const plans = [
+  {
+    title: "1-month plan",
+    price: "$8.99",
+    perMonth: "Per month",
+    guarantee: "45-days money-back guarantee",
+    imageUrl: "https://storage.googleapis.com/a1aa/image/2vdygXbM4SLKHFA2HTLCvm3hli1mlWZidfVOC0YVLcWXr93JA.jpg",
+    buttonText: "GET THE DEAL"
+  },
+  {
+    title: "12-month plan",
+    price: "$4.99",
+    perMonth: "Per month",
+    save: "Save 63%",
+    originalPrice: "$236.80",
+    discountedPrice: "$83.00 for the first 2 years",
+    guarantee: "45-days money-back guarantee",
+    imageUrl: "https://storage.googleapis.com/a1aa/image/2vdygXbM4SLKHFA2HTLCvm3hli1mlWZidfVOC0YVLcWXr93JA.jpg",
+    buttonText: "GET THE DEAL"
+  },
+  {
+    title: "6-month plan",
+    price: "$6.99",
+    perMonth: "Per month",
+    guarantee: "45-days money-back guarantee",
+    imageUrl: "https://storage.googleapis.com/a1aa/image/2vdygXbM4SLKHFA2HTLCvm3hli1mlWZidfVOC0YVLcWXr93JA.jpg",
+    buttonText: "GET THE DEAL"
+  }
+];
 
-  return (
-    <div style={{ backgroundColor: '#1a1a1a', color: 'white', minHeight: '100vh' }}>
-      {/* Carousel */}
-<Container style={{ padding: '20px 0' }}>
-  <Carousel activeIndex={index} onSelect={handleSelect}>
-    <Carousel.Item>
-      <img
-        className="d-block w-100"
-        src="https://wallpapers.com/images/hd/fantastic-beasts-and-where-to-find-them-horizontal-poster-86utad5c6nr65k54.jpg"
-        alt="First slide"
-        style={{ height: '550px', objectFit: 'cover' }} // Adjust height here
-      />
-      <Carousel.Caption>
-        <h3>FANTASTIC  BEASTS AND WHERE TO FIND THEM</h3>
-
-        <p style={{fontSize:'30px'}}>2006</p>
-        <Link to={'./home'}>
-          <Button style={{color:'white',backgroundColor:'black' }} className="mt-5">Get Started</Button>
-        </Link>
-      </Carousel.Caption>
-    </Carousel.Item>
-    <Carousel.Item>
-      <img
-        className="d-block w-100"
-        src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/706b9474134343.5c239806af449.jpg"
-        alt="Second slide"
-        style={{ height: '550px', objectFit: 'cover' }} // Adjust height here
-      />
-      <Carousel.Caption>
-        <h3> URI :THE SURGICAL  STRIKE</h3>
-
-
-        <p style={{fontSize:'30px'}}>2019 Film</p>
-        <Link to={'./home'}>
-        <Button style={{color:'white',backgroundColor:'black' }} className="mt-5">Get Started</Button>
-        </Link>
-      </Carousel.Caption>
-    </Carousel.Item>
-    <Carousel.Item>
-      <img
-        className="d-block w-100"
-        src="https://m.media-amazon.com/images/I/71r-aysV8TL.jpg"
-        alt="Third slide"
-        style={{ height: '550px', objectFit: 'cover' }} // Adjust height here
-      />
-      <Carousel.Caption>
-        <h3>IRON MAN 4</h3>
-        <p style={{fontSize:'30px'}}>2020.</p>
-        <Link to={'./home'}>
-        <Button style={{color:'white',backgroundColor:'black' }} className="mt-5">Get Started</Button>
-        </Link>
-      </Carousel.Caption>
-    </Carousel.Item>
-  </Carousel>
-</Container>
-
-      {/* THE LATEST TRAILER */}
-      <Container style={{ padding: '40px 0' }}>
-        <h2 style={{ color: 'white', textAlign: 'center', marginBottom: '30px' }}>The Latest Trailer</h2>
-        <Row className="d-flex flex-wrap justify-content-center">
-          
-        <Col md={3}  className="mb-4 d-flex">
-              <Card style={{ backgroundColor: '#333', color: 'white' }}>
-                <Card.Img
-                  variant="top"
-                  src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/b307d127256085.560502e8b209e.jpg" // Replace with actual image
-                  alt="Trailer Thumbnail"
-                />
-                <Card.Body>
-                  <Card.Title>KAHANI</Card.Title>
-                  <Card.Text>Rating: ★★★★☆</Card.Text>
-                  <Button variant="primary">Watch Now</Button>
-                </Card.Body>
-              </Card>
-            </Col>
-
-
-            
-
-            
-
-            <Col md={3}  className="mb-4 d-flex">
-              <Card style={{ backgroundColor: '#333', color: 'white' }}>
-                <Card.Img
-                  variant="top"
-                  src="https://mir-s3-cdn-cf.behance.net/project_modules/hd/62804b18669443.562cd567cbcd8.jpg" // Replace with actual image
-                  alt="Trailer Thumbnail"
-                />
-                <Card.Body>
-                  <Card.Title>KICK</Card.Title>
-                  <Card.Text>Rating: ★★★★☆</Card.Text>
-                  <Button variant="primary">Watch Now</Button>
-                </Card.Body>
-              </Card>
-            </Col>
-
-            
-            <Col md={3}  className="mb-4 d-flex">
-              <Card style={{ backgroundColor: '#333', color: 'white' }}>
-                <Card.Img
-                  variant="top"
-                  src="https://goggler.my/wp-content/uploads/2019/12/JM2_INTL_30Sht_BRIDGE_03-e1575889045252.jpg" // Replace with actual image
-                  alt="Trailer Thumbnail"
-                />
-                <Card.Body>
-                  <Card.Title>JUMANJI 3</Card.Title>
-                  <Card.Text>Rating: ★★★★☆</Card.Text>
-                  <Button variant="primary">Watch Now</Button>
-                </Card.Body>
-              </Card>
-            </Col>
-
-            
-            <Col md={3}  className="mb-4 d-flex">
-              <Card style={{ backgroundColor: '#333', color: 'white' }}>
-                <Card.Img
-                  variant="top"
-                  src="https://e1.pxfuel.com/desktop-wallpaper/528/531/desktop-wallpaper-1-pc-hollywood-movies-hollywood-movie-poster-thumbnail.jpg" // Replace with actual image
-                  alt="Trailer Thumbnail"
-                />
-                <Card.Body>
-                  <Card.Title>AVATAR</Card.Title>
-                  <Card.Text>Rating: ★★★★☆</Card.Text>
-                  <Button variant="primary">Watch Now</Button>
-                </Card.Body>
-              </Card>
-            </Col>
-          
-        </Row>
-      </Container>
-
-      {/* UPCOMING MOVIES */}
-      <Container style={{ padding: '40px 0' }}>
-        <h2 style={{ color: 'white', textAlign: 'center', marginBottom: '30px' }}>Upcoming Movies</h2>
-        <Row className="d-flex flex-wrap justify-content-center">
-         
-            <Col md={4} className="mb-4 d-flex">
-              <Card style={{ backgroundColor: '#333', color: 'white' }}>
-                <Card.Img
-                  variant="top"
-                  src="https://th.bing.com/th/id/OIP.fS7drXelAzXScI8AZCpW0QHaKX?w=1071&h=1500&rs=1&pid=ImgDetMain" // Replace with actual image
-                  alt="Movie Thumbnail"
-                />
-                <Card.Body>
-                  <Card.Title>Upcoming Movie</Card.Title>
-                  <Card.Text>Release Date: JAN 13</Card.Text>
-                  <Button variant="primary">View Trailer</Button>
-                </Card.Body>
-              </Card>
-            </Col>
-
-            <Col md={4} className="mb-4 d-flex">
-              <Card style={{ backgroundColor: '#333', color: 'white' }}>
-                <Card.Img
-                  variant="top"
-                  src="https://m.media-amazon.com/images/I/81KWTMl0JUL._AC_UF1000,1000_QL80_.jpg" // Replace with actual image
-                  alt="Movie Thumbnail"
-                />
-                <Card.Body>
-                  <Card.Title>Upcoming Movie</Card.Title>
-                  <Card.Text>Release Date: DEC 20</Card.Text>
-                  <Button variant="primary">View Trailer</Button>
-                </Card.Body>
-              </Card>
-            </Col>
-          
-
-          
-            <Col md={4} className="mb-4 d-flex">
-              <Card style={{ backgroundColor: '#333', color: 'white' }}>
-                <Card.Img
-                  variant="top"
-                  src="https://c8.alamy.com/comp/R2FPMM/x-men-days-of-future-past-year-2014-usa-director-bryan-singer-movie-poster-fr-R2FPMM.jpg" // Replace with actual image
-                  alt="Movie Thumbnail"
-                />
-                <Card.Body>
-                  <Card.Title>Upcoming Movie</Card.Title>
-                  <Card.Text>Release Date:MAY 12</Card.Text>
-                  <Button variant="primary">View Trailer</Button>
-                </Card.Body>
-              </Card>
-            </Col>
-
-            
-            
-        </Row>
-      </Container>
-
-        {/* THE LATEST TRAILER */}
-        <Container style={{ padding: '40px 0' }}>
-        <h2 style={{ color: 'white', textAlign: 'center', marginBottom: '30px' }}>Anime Trailers</h2>
-        <Row className="d-flex flex-wrap justify-content-center">
-          
-        <Col md={3}  className="mb-4 d-flex">
-              <Card style={{ backgroundColor: '#333', color: 'white' }}>
-                <Card.Img
-                  variant="top"
-                  src="https://pbs.twimg.com/media/DaDM26yVQAARzcL.jpg" // Replace with actual image
-                  alt="Trailer Thumbnail"
-                />
-                <Card.Body>
-                  <Card.Title>GRAVE OF THE FIREFLIES</Card.Title>
-                  <Card.Text>Rating: ★★★★☆</Card.Text>
-                  <Button variant="primary">Watch Now</Button>
-                </Card.Body>
-              </Card>
-            </Col>
-
-            
-
-            <Col md={3}  className="mb-4 d-flex">
-              <Card style={{ backgroundColor: '#333', color: 'white' }}>
-                <Card.Img
-                  variant="top"
-                  src="https://i0.wp.com/anitrendz.net/news/wp-content/uploads/2022/05/jujutsu-kaisen-0-film-main-poster.jpg" // Replace with actual image
-                  alt="Trailer Thumbnail"
-                />
-                <Card.Body>
-                  <Card.Title>JUJUTSU KAISEN</Card.Title>
-                  <Card.Text>Rating: ★★★★☆</Card.Text>
-                  <Button variant="primary">Watch Now</Button>
-                </Card.Body>
-              </Card>
-            </Col>
-
-            
-            <Col md={3}  className="mb-4 d-flex">
-              <Card style={{ backgroundColor: '#333', color: 'white' }}>
-                <Card.Img
-                  variant="top"
-                  src="https://rukminim2.flixcart.com/image/850/1000/xif0q/poster/o/3/l/medium-akira-anime-hd-matte-finish-poster-btt1023-butcute-original-imagmnh9bkgk3tpq.jpeg?q=90&crop=false" // Replace with actual image
-                  alt="Trailer Thumbnail"
-                />
-                <Card.Body>
-                  <Card.Title>AKIRA</Card.Title>
-                  <Card.Text>Rating: ★★★★☆</Card.Text>
-                  <Button variant="primary">Watch Now</Button>
-                </Card.Body>
-              </Card>
-            </Col>
-
-            
-            <Col md={3}  className="mb-4 d-flex">
-              <Card style={{ backgroundColor: '#333', color: 'white' }}>
-                <Card.Img
-                  variant="top"
-                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-rlxT-Cni_SQKdpAe5QrHCwXu8Mc453z-A7jsB53gfIv8d1-WOQWM_uG_oFGMuc7waBc&usqp=CAU" // Replace with actual image
-                  alt="Trailer Thumbnail"
-                />
-                <Card.Body>
-                  <Card.Title>MONONOKE</Card.Title>
-                  <Card.Text>Rating: ★★★★☆</Card.Text>
-                  <Button variant="primary">Watch Now</Button>
-                </Card.Body>
-              </Card>
-            </Col>
-          
-        </Row>
-      </Container>
-        {/* THE LATEST TRAILER */}
-        <Container style={{ padding: '40px 0' }}>
-        <h2 style={{ color: 'white', textAlign: 'center', marginBottom: '30px' }}>Popular Trailer</h2>
-        <Row className="d-flex flex-wrap justify-content-center">
-          
-        <Col md={3}  className="mb-4 d-flex">
-              <Card style={{ backgroundColor: '#333', color: 'white' }}>
-                <Card.Img
-                  variant="top"
-                  src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/4b62f079-afb4-49c6-a4ba-f8e4c0f8e6fc.__CR0,0,1617,1000_PT0_SX970_V1___.jpg" // Replace with actual image
-                  alt="Trailer Thumbnail"
-                />
-                <Card.Body>
-                  <Card.Title>SALAAR</Card.Title>
-                  <Card.Text>Rating: ★★★★☆</Card.Text>
-                  <Button variant="primary">Watch Now</Button>
-                </Card.Body>
-              </Card>
-            </Col>
-
-            
-
-            <Col md={3}  className="mb-4 d-flex">
-              <Card style={{ backgroundColor: '#333', color: 'white' }}>
-                <Card.Img
-                  variant="top"
-                  src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/47ca6ef9-f1b3-46cc-83bd-5925ee723092.__CR91,0,1019,630_PT0_SX970_V1___.jpg" // Replace with actual image
-                  alt="Trailer Thumbnail"
-                />
-                <Card.Body>
-                  <Card.Title>OPPENHEIMER</Card.Title>
-                  <Card.Text>Rating: ★★★★☆</Card.Text>
-                  <Button variant="primary">Watch Now</Button>
-                </Card.Body>
-              </Card>
-            </Col>
-
-            
-            <Col md={3}  className="mb-4 d-flex">
-              <Card style={{ backgroundColor: '#333', color: 'white' }}>
-                <Card.Img
-                  variant="top"
-                  src="https://rukminim2.flixcart.com/image/850/1000/km3s1ow0/poster/f/o/7/medium-the-thor-movie-wall-poster-for-room-with-gloss-lamination-original-imagf2uzyhaat5th.jpeg?q=90&crop=false" // Replace with actual image
-                  alt="Trailer Thumbnail"
-                />
-                <Card.Body>
-                  <Card.Title>THOR 4</Card.Title>
-                  <Card.Text>Rating: ★★★★☆</Card.Text>
-                  <Button variant="primary">Watch Now</Button>
-                </Card.Body>
-              </Card>
-            </Col>
-
-            
-            <Col md={3}  className="mb-4 d-flex">
-              <Card style={{ backgroundColor: '#333', color: 'white' }}>
-                <Card.Img
-                  variant="top"
-                  src="https://rukminim2.flixcart.com/image/850/1000/k77xx8w0/poster/c/g/t/medium-the-shawshank-redemption-movie-poster-for-room-with-gloss-original-imafphnwmxjkvfjf.jpeg?q=90&crop=false" // Replace with actual image
-                  alt="Trailer Thumbnail"
-                />
-                <Card.Body>
-                  <Card.Title>SWAWSHANK</Card.Title>
-                  <Card.Text>Rating: ★★★★☆</Card.Text>
-                  <Button variant="primary">Watch Now</Button>
-                </Card.Body>
-              </Card>
-            </Col>
-
-            
-          
-        </Row>
-      </Container>
-
-
+const LandingPage = () => (
+  <div>
+   <section 
+  id="main1" 
+  style={{ 
+    margin: 0, 
+    backgroundImage: 'url("https://preview.redd.it/new-fighter-poster-the-film-releases-in-one-month-set-to-be-v0-1694oij8hd8c1.jpeg?auto=webp&s=475385f31cefefe1905bb0cf25197f028b7ea899")', 
+    backgroundSize: 'cover', 
+    marginTop:"20px",
+    paddingTop:"70px",
+    backgroundPosition: 'center center' 
+  }}
+>
+  <div className="content" style={{ textAlign: 'left', padding: '200px 50px' }}>
+    <div className="new-releases" style={{ color: 'white', fontSize: '44px', fontWeight: 'bold', marginBottom: '10px' }}>
+      NEW RELEASES
     </div>
-  );
-}
+    <div className="title" style={{ fontSize: '88px', fontWeight: 'bold', margin: 0 ,color:"black"}}>
+    FIGHTER 
+    </div>
+    <Link to={'./home'}>
+    <button 
+      style={{
+        marginTop: '20px',
+        padding: '10px 20px',
+        fontSize: '16px',
+        backgroundColor: 'red',
+        color: 'white',
+        border: 'none',
+        borderRadius: '5px',
+        cursor: 'pointer'
+      }}
+    >
+      Get Started
+    </button></Link>
+  </div>
+</section>
+
+
+
+    <section id="main2" style={{ width: '90%', margin: '0 auto', padding: '20px 0' }}>
+      <div className="header" style={{ textAlign: 'left', marginBottom: '20px' }}>
+        <div className="sub-title" style={{ color: 'red', fontSize: '14px', fontWeight: 'bold', marginBottom: '10px' }}>ONLINE STREAMING</div>
+        <h1 style={{ fontSize: '36px', color: 'white', margin: 0 }}>Watch Trailer Shows Online</h1>
+      </div>
+      <div className="shows" style={{ display: 'flex', justifyContent: 'space-between' }}>
+        <div className="show" style={{ width: '23%', position: 'relative' }}>
+          <img src="https://cdn.cinematerial.com/p/297x/odhbdc65/the-last-breath-movie-poster-md.jpg?v=1719589994" alt="A couple dancing closely in a romantic scene" width="400" height="600" style={{ width: '100%', height: 'auto' }} />
+          <div className="info" style={{ position: 'absolute', bottom: '10px', left: '10px', color: '#fff' }}>
+            <div className="genre" style={{ color: 'red', fontSize: '14px', fontWeight: 'bold' }}>ROMANCE, DRAMA</div>
+            <div className="title" style={{ fontSize: '18px', fontWeight: 'bold', margin: '5px 0' }}>Thinking You</div>
+            <div className="details" style={{ display: 'flex', alignItems: 'center' }}>
+              <i className="fas fa-play-circle" style={{ marginRight: '5px' }}></i>
+              <span style={{ fontSize: '14px' }}>SEASON 1 - 2020</span>
+            </div>
+          </div>
+        </div>
+        <div className="show" style={{ width: '23%', position: 'relative' }}>
+          <img src="https://m.media-amazon.com/images/I/91GIFwkdlvL.jpg" alt="A woman singing passionately on stage" width="400" height="600" style={{ width: '100%', height: 'auto' }} />
+          <div className="info" style={{ position: 'absolute', bottom: '10px', left: '10px', color: '#fff' }}>
+            <div className="genre" style={{ color: 'red', fontSize: '14px', fontWeight: 'bold' }}>ROMANCE, DRAMA</div>
+            <div className="title" style={{ fontSize: '18px', fontWeight: 'bold', margin: '5px 0' }}>Civil War</div>
+            <div className="details" style={{ display: 'flex', alignItems: 'center' }}>
+              <i className="fas fa-play-circle" style={{ marginRight: '5px' }}></i>
+              <span style={{ fontSize: '14px' }}>SEASON 1 - 2020</span>
+            </div>
+          </div>
+        </div>
+        <div className="show" style={{ width: '23%', position: 'relative' }}>
+          <img src="https://posters.movieposterdb.com/24_07/2024/6263850/l_deadpool-wolverine-movie-poster_6befe4de.jpg" alt="Two women smiling and talking into a microphone" width="400" height="600" style={{ width: '100%', height: 'auto' }} />
+          <div className="info" style={{ position: 'absolute', bottom: '10px', left: '10px', color: '#fff' }}>
+            <div className="genre" style={{ color: 'red', fontSize: '14px', fontWeight: 'bold' }}>ROMANCE, DRAMA</div>
+            <div className="title" style={{ fontSize: '18px', fontWeight: 'bold', margin: '5px 0' }}>Popular Movie</div>
+            <div className="details" style={{ display: 'flex', alignItems: 'center' }}>
+              <i className="fas fa-play-circle" style={{ marginRight: '5px' }}></i>
+              <span style={{ fontSize: '14px' }}>SEASON 1 - 2020</span>
+            </div>
+          </div>
+        </div>
+        <div className="show" style={{ width: '23%', position: 'relative' }}>
+          <img src="https://xl.movieposterdb.com/22_12/2022/15838850/xl_the-roundup-movie-poster_efc87135.jpg" alt="A man performing on stage with a microphone" width="400" height="600" style={{ width: '100%', height: 'auto' }} />
+          <div className="info" style={{ position: 'absolute', bottom: '10px', left: '10px', color: '#fff' }}>
+            <div className="genre" style={{ color: 'red', fontSize: '14px', fontWeight: 'bold' }}>ROMANCE, DRAMA</div>
+            <div className="title" style={{ fontSize: '18px', fontWeight: 'bold', margin: '5px 0' }}>Best Game</div>
+            <div className="details" style={{ display: 'flex', alignItems: 'center' }}>
+              <i className="fas fa-play-circle" style={{ marginRight: '5px' }}></i>
+              <span style={{ fontSize: '14px' }}>SEASON 1 - 2020</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* Main Section 3 */}
+<section id="main3" style={{ textAlign: 'center', padding: '20px' }}>
+  <div className="header" style={{ fontSize: '14px', color: '#888' }}>FIND ANYWHERE ELSE</div>
+  <div className="title" style={{ fontSize: '36px', margin: '10px 0' }}>Web Series Shows For You</div>
+  <div className="shows" style={{ display: 'flex', justifyContent: 'center', gap: '20px', flexWrap: 'wrap' }}>
+    {/* Array of different images */}
+    {[
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrByQUVn8kDM6d0kxsLVxeX_ACz7pbfC8-2Q&s",
+      "https://mir-s3-cdn-cf.behance.net/project_modules/hd/2c7d21112473239.601502d49ff6e.jpg",
+      "https://rukminim2.flixcart.com/image/850/1000/l0h1g280/poster/e/p/v/small-mirzapur-web-series-poster-multicolor-photopaper-print-12-original-imagc95deggdcjgd.jpeg?q=20&crop=false",
+      "https://cdn.shopify.com/s/files/1/0760/9378/4381/files/undekhi--best-indian-crime-thriller-web-series-624454_480x480.jpg?v=1703676292",
+      "https://m.media-amazon.com/images/M/MV5BMzllMWE4YTgtODM3OS00MGEyLWEwMjktNWQzZjFjNWNhMGNmXkEyXkFqcGc@._V1_.jpg",
+      "https://image-resizer-cloud-cdn.api.aha.firstlight.ai/image/AF2AE020-DF31-4F7D-BD23-593BA91CFA6F/0-2x3.jpg?width=720"
+    ].map((imageUrl, index) => (
+      <div key={index} className="show" style={{ backgroundColor: '#222', borderRadius: '10px', overflow: 'hidden', width: '200px', margin: '10px', position: 'relative' }}>
+        <img src={imageUrl} alt={`Show ${index + 1}`} width="200" height="300" style={{ width: '100%', height: 'auto' }} />
+        <div className="overlay" style={{ position: 'absolute', top: '10px', left: '10px', display: 'flex', gap: '5px' }}>
+          <span style={{ backgroundColor: '#000', color: '#fff', padding: '2px 5px', borderRadius: '3px' }}>1080</span>
+          <span style={{ backgroundColor: '#000', color: '#fff', padding: '2px 5px', borderRadius: '3px' }}>HD</span>
+        </div>
+        <div className="score-circle" style={{ position: 'absolute', top: '10px', right: '10px', backgroundColor: 'rgba(0, 0, 0, 0.5)', color: '#0f0', padding: '5px', borderRadius: '50%', fontWeight: 'bold' }}>6.1</div>
+        <div className="show-info" style={{ padding: '10px', textAlign: 'left' }}>
+          <p className="duration" style={{ margin: '5px 0', color: '#888' }}>180 min, <span className="genre" style={{ fontWeight: 'bold', color: 'red' }}>DRAMA</span></p>
+          <div className="title" style={{ fontSize: '18px', fontWeight: 'bold', color: '#fff' }}>World Web series  Story</div>
+          <div className="details" style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
+            <i className="fas fa-play-circle" style={{ color: 'white' }}></i>
+            <span style={{ color: 'white' }}>SEASON 1 - 2022</span>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+
+    {/* Main Section 4 */}
+    <section id='main4'>
+      <div style={{textAlign:"center"}} className="container">
+        <div className="heading" style={{ fontSize: '36px', margin: '20px 0' }}>Ready to Grab the deal?</div>
+        <div className="plans" style={{ display: 'flex', justifyContent: 'center', gap: '20px' }}>
+          {plans.map((plan, index) => (
+            <div className="plan" key={index} style={{ backgroundColor: 'white', padding: '20px', borderRadius: '10px', width: '300px', boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)' }}>
+                <i className="fab fa-youtube" style={{ fontSize: '64px', color: 'red', marginRight: '10px' }}></i>
+              <h2 style={{ fontSize: '24px', margin: '10px 0' }}>{plan.title}</h2>
+              <div className="price" style={{ fontSize: '36px', margin: '10px 0',color:"black" }}>{plan.price}</div>
+              <div className="per-month" style={{ fontSize: '18px', marginBottom: '20px' }}>{plan.perMonth}</div>
+              {plan.save && <div className="save" style={{ backgroundColor: '#f8d7da', color: '#721c24', padding: '5px 10px', borderRadius: '5px', fontSize: '14px', marginBottom: '10px' }}>{plan.save}</div>}
+              {plan.originalPrice && (
+                <div className="original-price" style={{ textDecoration: 'line-through', color: 'black', fontSize: '14px' }}>{plan.originalPrice}</div>
+              )}
+              {plan.discountedPrice && (
+                <div className="discounted-price" style={{ fontSize: '14px', color: 'black' }}>{plan.discountedPrice}</div>
+              )}
+              <button className="deal-button" style={{ background: 'red', color: 'white', padding: '15px', border: 'none', borderRadius: '5px', fontSize: '18px', cursor: 'pointer', marginBottom: '20px' }}>
+                {plan.buttonText}
+              </button>
+              <div className="guarantee" style={{ fontSize: '14px', color: 'green' }}>
+                <i className="fas fa-lock"></i> {plan.guarantee}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+
+    <section id='main5'>
+  <div className="header" style={{ textAlign: 'center', padding: '50px 0' }}>
+    <h1 style={{ fontSize: '36px', margin: '0' }}>Start for your first 30 days.</h1>
+    <p style={{ fontSize: '18px', margin: '10px 0 20px' }}>Ready to watch? Enter your email to create or restart your membership.</p>
+    <div className="email-input" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom: '50px' }}>
+      <input type="email" placeholder="Type your e-mail address" style={{ padding: '10px', fontSize: '16px', border: 'none', borderRadius: '5px', width: '300px', marginRight: '10px' }} />
+      <button style={{ padding: '10px 20px', fontSize: '16px', border: 'none', borderRadius: '5px', backgroundColor: '#e50914', color: '#fff', cursor: 'pointer' }}>GET STARTED</button>
+    </div>
+  </div>
+
+  <div className="footer" style={{ backgroundColor: '#111', padding: '20px 0' }}>
+    <div className="container" style={{ display: 'flex', justifyContent: 'space-around', flexWrap: 'wrap' }}>
+      <div className="column" style={{ flex: 1, minWidth: '200px', margin: '10px' }}>
+        <h3 style={{ color: '#e50914', fontSize: '18px', marginBottom: '10px' }}>Questions? Call 0850-380-6444</h3>
+        <p style={{ fontSize: '14px' }}>Format for custom post types that are not book or you can use else if to specify a second post type the same way as above.</p>
+      </div>
+      <div className="column" style={{ flex: 1, minWidth: '200px', margin: '10px' }}>
+        <h3 style={{ color: '#e50914', fontSize: '18px', marginBottom: '10px' }}>PLAY SHOW</h3>
+        <ul style={{ listStyle: 'none', padding: 0 }}>
+          <li style={{ marginBottom: '10px' }}><a href="#" style={{ color: '#fff', textDecoration: 'none' }}>Play Show</a></li>
+          <li style={{ marginBottom: '10px' }}><a href="#" style={{ color: '#fff', textDecoration: 'none' }}>Devices</a></li>
+          <li style={{ marginBottom: '10px' }}><a href="#" style={{ color: '#fff', textDecoration: 'none' }}>Tips</a></li>
+          <li style={{ marginBottom: '10px' }}><a href="#" style={{ color: '#fff', textDecoration: 'none' }}>Contact</a></li>
+          <li style={{ marginBottom: '10px' }}><a href="#" style={{ color: '#fff', textDecoration: 'none' }}>Legal Notices</a></li>
+          <li style={{ marginBottom: '10px' }}><a href="#" style={{ color: '#fff', textDecoration: 'none' }}>Our Terms</a></li>
+        </ul>
+      </div>
+      <div className="column" style={{ flex: 1, minWidth: '200px', margin: '10px' }}>
+        <h3 style={{ color: '#e50914', fontSize: '18px', marginBottom: '10px' }}>SUPPORT</h3>
+        <ul style={{ listStyle: 'none', padding: 0 }}>
+          <li style={{ marginBottom: '10px' }}><a href="#" style={{ color: '#fff', textDecoration: 'none' }}>Help Center</a></li>
+          <li style={{ marginBottom: '10px' }}><a href="#" style={{ color: '#fff', textDecoration: 'none' }}>FAQ</a></li>
+          <li style={{ marginBottom: '10px' }}><a href="#" style={{ color: '#fff', textDecoration: 'none' }}>Account</a></li>
+          <li style={{ marginBottom: '10px' }}><a href="#" style={{ color: '#fff', textDecoration: 'none' }}>Privacy Policy</a></li>
+          <li style={{ marginBottom: '10px' }}><a href="#" style={{ color: '#fff', textDecoration: 'none' }}>Media Center</a></li>
+          <li style={{ marginBottom: '10px' }}><a href="#" style={{ color: '#fff', textDecoration: 'none' }}>Support</a></li>
+        </ul>
+      </div>
+      <div className="column newsletter" style={{ flex: 1, minWidth: '200px', margin: '10px' }}>
+        <h3 style={{ color: '#e50914', fontSize: '18px', marginBottom: '10px' }}>NEWSLETTER</h3>
+        <p style={{ fontSize: '14px' }}>Format for custom post types that are not book or you can use else if to specify a second post type the same way as above.</p>
+        <input type="email" placeholder="Enter Your Email" style={{ padding: '10px', fontSize: '16px', border: 'none', borderRadius: '5px', width: '200px', marginRight: '10px' }} />
+        <button style={{ padding: '10px 20px', fontSize: '16px', border: 'none', borderRadius: '5px', backgroundColor: '#e50914', color: '#fff', cursor: 'pointer' }}>SUBMIT NOW</button>
+      </div>
+    </div>
+    <div className="language-selector" style={{ textAlign: 'center', marginTop: '20px' }}>
+      <select style={{ padding: '10px', fontSize: '16px', border: 'none', borderRadius: '5px', backgroundColor: '#333', color: '#fff' }}>
+        <option>English</option>
+        {/* Add other languages as needed */}
+      </select>
+    </div>
+  </div>
+</section>
+  </div>
+
+  
+);
 
 export default LandingPage;
